@@ -7,6 +7,9 @@ COPY mvnw .
 COPY pom.xml .
 COPY src/ src
 
+# Ensure mvnw script has execute permissions
+RUN chmod +x mvnw
+
 # Build the application and skip tests
 RUN ./mvnw clean package -DskipTests
 
